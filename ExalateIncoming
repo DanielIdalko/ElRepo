@@ -1,0 +1,16 @@
+issue.summary      = replica.summary
+issue.description  = replica.description
+issue.comments     = commentHelper.mergeComments(issue, replica)
+
+/*
+Status Synchronization
+
+Sync status according to the mapping [remote issue status: local issue status]
+If statuses are the same on both sides don"t include them in the mapping
+def statusMapping = ["Open":"New", "To Do":"Open"]
+def remoteStatusName = replica.status.name
+issue.setStatus(statusMapping[remoteStatusName] ?: remoteStatusName)
+*/
+issue.labels       = replica.labels
+issue.assignee     = nodeHelper.getUserByUsername(replica.assignee?.username)
+issue.reporter     = nodeHelper.getUserByUsername(replica.reporter?.username)

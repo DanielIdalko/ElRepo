@@ -3,6 +3,6 @@ class CustomFieldSync {
 
   	issue.summary      = replica.summary
 	issue.description  = replica.description
-	issue.assignee     = replica.assignee
+	issue.comments = commentHelper.mergeComments(issue, replica)
   }
 }

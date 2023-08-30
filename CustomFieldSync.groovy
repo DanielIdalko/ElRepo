@@ -1,5 +1,5 @@
 class CustomFieldSync {
-    static receive(issue,replica, commentHelper) {
+    static receive(issue,replica,commentHelper) {
 
   	issue.summary      = replica.summary
 	issue.description  = replica.description

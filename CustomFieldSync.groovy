@@ -4,7 +4,7 @@ class CustomFieldSync {
   	issue.summary      = replica.summary
 	issue.description  = replica.description
 	issue.comments = commentHelper.mergeComments(issue, replica)
-	debug.log("repoIsTested")
+	debug.error("hello")
 	
   }
 }
